@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word2Vec Interactive word generator: antonyms</title>
+    <style>
+        h1 {
+            color: #3498db;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+    </style>
+</head>
+<body>
+<body>
+    <h1>Find the Least Similar Words</h1>
+    <form method="POST">
+        <label for="word">Enter a word here:</label>
+        <input type="text" id="word" name="word">
+        <button type="submit">Generate word</button>
+    </form>
+    <div>
+        <h2>the least similar word we could find:</h2>
+        <ul>
+            {% for word, similarity in least_similar_words %}
+                <li>{{ word }} (Similarity: {{ similarity }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
